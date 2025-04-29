@@ -1,4 +1,4 @@
-name: Playwright Tests - Execution UI tests
+name: Playwright Tests - Execution API tests
 on:
   push:
     branches: [main]
@@ -38,8 +38,8 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run UI Smoke tests
-        run: npm run ui_smoketests
+      - name: Run API Smoke tests
+        run: npm run api_smoketests
         continue-on-error: true
 
       - name: Upload report as artifact

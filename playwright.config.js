@@ -28,7 +28,7 @@ export default defineConfig({
     //   },
     // },
     {
-      name: "Chrome",
+      name: 'chromium',
       use: {
         browserName: "chromium",
         headless: true,
@@ -37,7 +37,16 @@ export default defineConfig({
         ignoreHttpsErrors: true,
         permissions: ["geolocation"],
         video: "retain-on-failure",
+        testDir: 'tests/ui/specs', // Point to your UI tests
         // viewport: { width: 720, height: 720 },
+      },
+    },
+    // API Project
+    {
+      name: 'api',
+      testDir: 'tests/api/tests',  // Point to your API tests directory
+      use: {
+        headless: true, // API tests don't require a browser UI
       },
     },
   ],
