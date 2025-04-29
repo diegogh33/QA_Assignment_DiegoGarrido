@@ -9,42 +9,42 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # Install Docker Compose
-    - name: Install Docker Compose
-      run: |
-        sudo apt-get update
-        sudo apt-get install docker-compose -y
+      # Install Docker Compose
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install docker-compose -y
 
-    # Start the application using docker-compose
-    - name: Set up Docker Compose
-      run: docker-compose up -d
+      # Start the application using docker-compose
+      - name: Set up Docker Compose
+        run: docker-compose up -d
 
-    # Wait for the application to be ready
-    - name: Wait for the app to be ready
-      run: sleep 20
+      # Wait for the application to be ready
+      - name: Wait for the app to be ready
+        run: sleep 20
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Install Playwright browsers
-      run: npx playwright install --with-deps
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
 
-    - name: Run UI Smoke tests
-      run: npm run smokeTestsUI
-      continue-on-error: true
+      - name: Run UI Smoke tests
+        run: npm run smokeTestsUI
+        continue-on-error: true
 
-    - name: Upload report as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+      - name: Upload report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
