@@ -1,0 +1,37 @@
+{
+  "OwnerTestData": {
+    "firstName": "George",
+    "lastName": "Franklin",
+    "address": "110 W. Liberty St.",
+    "city": "Madison",
+    "telephone": "6085551023"
+  },
+  "EditOwnerTestData": {
+    "firstName": "Harold",
+    "lastName": "Davis",
+    "address": "563 Friendly St.",
+    "city": "Windsor",
+    "telephone": "6085553198",
+    "new_firstName": "Tom",
+    "new_lastName": "Carlos"
+  },  
+  "NewOwnerTestData": {
+    "firstName": "Pedro",
+    "lastName": "James",
+    "address": "Street 10",
+    "city": "London",
+    "telephone": "0627561794"
+  },
+  "PetTestData": {
+    "ownerName": "Franklin",
+    "name": "new Leo",
+    "birthdate": "19/01/2021",
+    "type": "dog"
+  },
+  "VisitsTestData": {
+    "ownerName": "Franklin",
+    "petName": "Leo",
+    "date": "22-08-2024",
+    "description": "rabis shot"
+  }
+}
