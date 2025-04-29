@@ -1,4 +1,3 @@
-const { expect } = require("@playwright/test");
 import POManager from "../pages/POManager";
 import { PetTestData } from "../data/uiTestData.json";
 import { petFixture } from "../fixtures/baseFixtures"; // Imports petFixture

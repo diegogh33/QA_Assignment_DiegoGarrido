@@ -1,4 +1,4 @@
-const { test, expect } = require("@playwright/test");
+const { expect } = require("@playwright/test");
 import POManager from "../pages/POManager";
 import { OwnerTestData, NewOwnerTestData, EditOwnerTestData } from "../data/uiTestData.json";
 import { ownersFixture, registerFixture } from "../fixtures/baseFixtures";

@@ -3,6 +3,7 @@ import OwnersPage from "../pages/OwnersPage";
 import OwnerInfoPage from "../pages/OwnerInfoPage";
 import OwnerOverviewPage from "../pages/OwnerOverviewPage";
 import PetsPage from "../pages/PetsPage";
+import VisitsPage from "../pages/VisitsPage";
 
 class POManager {
   constructor(page) {
@@ -12,6 +13,7 @@ class POManager {
     this.ownerInfoPage = new OwnerInfoPage(this.page);
     this.ownerOverviewPage = new OwnerOverviewPage(this.page);
     this.petsPage = new PetsPage(this.page);
+    this.visitsPage = new VisitsPage(this.page);
   }
 
   getNavBarPage() {
@@ -32,6 +34,10 @@ class POManager {
 
   getPetsPage() {
     return this.petsPage;
+  }
+
+  getVisitsPage() {
+    return this.visitsPage;
   }
 }
 

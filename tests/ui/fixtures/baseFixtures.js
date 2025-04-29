@@ -5,7 +5,7 @@ import POManager from "../pages/POManager";
 const baseFixture = test.extend({
   pm: async ({ page }, use) => {
     const poManager = new POManager(page);
-    await page.goto('/')
+    await page.goto("/");
     await expect(page).toHaveTitle(/PetClinic/);
     await use(poManager);
   },
