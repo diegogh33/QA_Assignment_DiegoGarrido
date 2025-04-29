@@ -16,6 +16,7 @@ class VisitsPage {
 
   async addNewVisitDetails(description, date) {
     await this.descriptionInput.fill(description);
+    await this.dateInput.clear();
     await this.dateInput.pressSequentially(date);
     await this.addNewVisitButton.click();
   }
