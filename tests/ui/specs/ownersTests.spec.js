@@ -127,7 +127,7 @@ ownersFixture("Edit Owner Last Name @smoke", async ({ page, ownersSetup }) => {
   await expect(ownerOverviewPage.ownerNameText).toContainText(EditOwnerTestData.lastName);
 });
 
-ownersFixture.only("View Owner details @smoke", async ({ page, ownersSetup }) => {
+ownersFixture("View Owner details @smoke", async ({ page, ownersSetup }) => {
   const pm = new POManager(page);
   const ownerOverviewPage = pm.getOwnerOverviewPage();
   const ownersPage = pm.getOwnersPage();
