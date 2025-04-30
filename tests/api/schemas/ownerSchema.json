@@ -1,0 +1,109 @@
+{
+  "title": "Owner",
+  "description": "A pet owner.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "title": "ID",
+      "description": "The ID of the pet owner.",
+      "type": "integer",
+      "format": "int32",
+      "minimum": 0,
+      "readOnly": true
+    },
+    "firstName": {
+      "title": "First name",
+      "description": "The first name of the pet owner.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "lastName": {
+      "title": "Last name",
+      "description": "The last name of the pet owner.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "address": {
+      "title": "Address",
+      "description": "The postal address of the pet owner.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "city": {
+      "title": "City",
+      "description": "The city of the pet owner.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "telephone": {
+      "title": "Telephone number",
+      "description": "The telephone number of the pet owner.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20,
+      "pattern": "^[0-9]*$"
+    },
+    "pets": {
+      "title": "Pets",
+      "description": "The pets owned by this individual, including any booked vet visits.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "description": "The ID of the pet.",
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "name": {
+            "title": "Name",
+            "description": "The name of the pet.",
+            "type": ["string", "null"]
+          },
+          "birthDate": {
+            "title": "Birth Date",
+            "description": "The birth date of the pet.",
+            "type": ["string", "null"],
+            "format": "date"
+          },
+          "type": {
+            "title": "Type",
+            "description": "The type of the pet.",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": ["id", "name"]
+          },
+          "visits": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "integer", "format": "int32" },
+                "date": { "type": "string", "format": "date" },
+                "description": { "type": "string" }
+              },
+              "required": ["id", "date", "description"]
+            }
+          }
+        },
+        "required": ["id", "type"]
+      },
+      "readOnly": true
+    }
+  },
+  "required": ["id", "firstName", "lastName", "address", "city", "telephone", "pets"]
+}

@@ -1,0 +1,151 @@
+{
+  "createPetSuccess": {
+    "ownerId": "3",
+    "pet": {
+      "id": "2",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "createPetWithoutName": {
+    "ownerId": "3",
+    "pet": {
+      "id": "4",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "createPetEmptyBody": {
+    "ownerId": "3",
+    "pet": {}
+  },
+  "createPetOwnerNotFound": {
+    "ownerId": "90",
+    "pet": {
+      "id": "2",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "createPetInvalidOwnerID": {
+    "ownerId": "inval*&id",
+    "pet": {
+      "id": "2",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "createPetEmptyOwnerID": {
+    "ownerId": "",
+    "pet": {
+      "id": "2",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "getPetSuccess1": {
+    "ownerId": "1",
+    "ownerName": "George Franklin",
+    "pet": {
+      "id": "1",
+      "name": "Leo",
+      "birthDate": "2010-09-07",
+      "typeId": "1",
+      "typeName": "cat"
+    }
+  },
+  "getPetSuccess2": {
+    "ownerId": "1",
+    "ownerName": "George Franklin",
+    "pet": {
+      "id": "2",
+      "name": "Basil",
+      "birthDate": "2012-08-06",
+      "typeId": "6",
+      "typeName": "hamster"
+    }
+  },
+  "petOwnerNotFound": {
+    "ownerId": "9000",
+    "petId": "1"
+  },
+  "petNotFound": {
+    "ownerId": "1",
+    "petId": "50"
+  },
+  "invalidOwnerID": {
+    "ownerId": "inva&*lid",
+    "petId": "1"
+  },
+  "invalidPetID": {
+    "ownerId": "1",
+    "petId": "inva&*lid"
+  },
+  "emptyOwnerID": {
+    "ownerId": "",
+    "petId": "invalid"
+  },
+  "editPetSuccess": {
+    "ownerId": "15",
+    "owner": "George Franklin",
+    "pet": {
+      "id": "2",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "editPetWithoutName": {
+    "ownerId": "15",
+    "pet": {
+      "id": "4",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "editPetEmptyBody": {
+    "ownerId": "15",
+    "petId": "1",
+    "pet": {}
+  },
+  "editPetEmptyOwnerID": {
+    "ownerId": "",
+    "pet": {
+      "id": "2",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "editPetEmptyPetID": {
+    "ownerId": "1",
+    "pet": {
+      "id": "",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "editPetOwnerNotFound": {
+    "ownerId": "900",
+    "pet": {
+      "id": "2",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  },
+  "editPetPetNotFound": {
+    "ownerId": "1",
+    "pet": {
+      "id": "70",
+      "name": "leooo",
+      "birthDate": "2010-09-07",
+      "typeId": "1"
+    }
+  }
+}

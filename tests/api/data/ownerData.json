@@ -1,0 +1,64 @@
+{
+  "createOwnerSuccess": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "123 Large Street",
+    "city": "London",
+    "telephone": "1234567890"
+  },
+  "createOwnerWithoutFirstName": {
+    "lastName": "Doe",
+    "address": "123 Main St",
+    "city": "Springfield",
+    "telephone": "1234567890"
+  },
+  "createOwnerWithoutLastName": {
+    "firstName": "John",
+    "address": "123 Main St",
+    "city": "Springfield",
+    "telephone": "1234567890"
+  },
+  "createOwnerEmptyBody": {},
+  "getOwnerSuccess": {
+    "ownerId": "1",
+    "firstName": "George",
+    "lastName": "Franklin",
+    "address": "110 W. Liberty St.",
+    "city": "Madison",
+    "telephone": "6085551023"
+  },
+  "editOwnerSuccess": {
+    "ownerId": "4",
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "123 Main St",
+    "city": "Springfield",
+    "telephone": "1234567890"
+  },
+  "editOwnerMissingFirstName": {
+    "ownerId": "5",
+    "lastName": "Doe",
+    "address": "123 Main St",
+    "city": "Springfield",
+    "telephone": "1234567890"
+  },
+  "editOwnerMissingLastName": {
+    "ownerId": "6",
+    "firstName": "John",
+    "address": "123 Main St",
+    "city": "Springfield",
+    "telephone": "1234567890"
+  },
+  "OwnerForEdit": {
+    "ownerId": "4"
+  },
+  "OwnerNotFound": {
+    "ownerId": "500"
+  },
+  "OwnerInvalidID": {
+    "ownerId": "invali*&dID"
+  },
+  "OwnerEmptyID": {
+    "ownerId": " "
+  }
+}
