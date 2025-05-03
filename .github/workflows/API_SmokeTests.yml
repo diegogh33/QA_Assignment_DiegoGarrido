@@ -37,9 +37,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
-
       - name: Run API Smoke tests
         run: npm run api_smoketests
         continue-on-error: true
