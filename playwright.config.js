@@ -50,7 +50,7 @@ export default defineConfig({
         trace: "on", //'on', 'off', 'retain-on-failure'
         ignoreHttpsErrors: true,
         permissions: ["geolocation"],
-        video: "retain-on-failure",
+        video: "on",
         testDir: "tests/ui/specs", // Point to your UI tests
         // viewport: { width: 720, height: 720 },
       },
