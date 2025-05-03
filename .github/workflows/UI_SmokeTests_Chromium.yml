@@ -1,10 +1,13 @@
-name: API Smoke tests
+name: UI Smoke tests - Chromium
 on:
   workflow_dispatch:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+concurrency:
+  group: ui_tests
+  cancel-in-progress: false
 
 jobs:
   test:
@@ -40,8 +43,8 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run API Smoke tests
-        run: npm run api_smoketests
+      - name: Run UI Smoke tests
+        run: npm run ui_smoketests_chromium
         continue-on-error: true
 
       - name: Upload report as artifact

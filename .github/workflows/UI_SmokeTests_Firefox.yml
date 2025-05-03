@@ -1,9 +1,14 @@
-name: Playwright Tests - Execution UI tests
+name: UI Smoke tests - Firefox
 on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+concurrency:
+  group: ui_tests
+  cancel-in-progress: false
+
 jobs:
   test:
     timeout-minutes: 60
@@ -39,7 +44,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run UI Smoke tests
-        run: npm run ui_smoketests
+        run: npm run ui_smoketests_firefox
         continue-on-error: true
 
       - name: Upload report as artifact
