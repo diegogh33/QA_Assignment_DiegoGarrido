@@ -1,6 +1,16 @@
 name: UI Smoke tests - Chromium
 on:
   workflow_dispatch:
+    inputs:
+        environment:
+          description: "Target environment for tests"
+          required: true
+          default: 'INT'
+          type: choice
+          options:
+            - INT
+            - UAT
+            - PP
   push:
     branches: [main]
   pull_request:
@@ -42,6 +52,21 @@ jobs:
 
       - name: Install Playwright browsers
         run: npx playwright install chromium
+
+      - name: Set BASE_URL environment variable
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if [ "${{ github.event.inputs.environment }}" == "INT" ]; then
+            echo "BASE_URL=http://localhost:8080" >> $GITHUB_ENV
+          elif [ "${{ github.event.inputs.environment }}" == "UAT" ]; then
+            echo "BASE_URL=http://localhost:8081" >> $GITHUB_ENV
+          elif [ "${{ github.event.inputs.environment }}" == "PP" ]; then
+            echo "BASE_URL=http://localhost:8082" >> $GITHUB_ENV
+          fi
+
+      - name: Set BASE_URL environment variable (push/pull_request)
+        if: github.event_name != 'workflow_dispatch'
+        run: echo "BASE_URL=http://localhost:8080" >> $GITHUB_ENV # Default to INT for push/pull_request
 
       - name: Run UI Smoke tests
         run: npm run ui_smoketests_chromium
