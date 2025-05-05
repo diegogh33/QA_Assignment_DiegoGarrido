@@ -8,7 +8,7 @@
     "api_tests": "npx playwright test \"./tests/api/tests\"",
     "ui_smoketests_chromium": "npx playwright test \"./tests/ui/specs\" --grep @smoke --project=chromium",
     "ui_smoketests_firefox": "npx playwright test \"./tests/ui/specs\" --grep @smoke --project=firefox",
-    "api_smoketests": "npx playwright test \"./tests/api/tests\" --grep @smoke"
+    "api_smoketests":"npx playwright test --grep @smoke --project=api"
   },
   "keywords": [],
   "author": "",
