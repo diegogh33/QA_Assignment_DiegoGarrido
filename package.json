@@ -4,11 +4,11 @@
   "main": "index.js",
   "scripts": {
     "tests": "npx playwright test",
-    "ui_tests": "npx playwright test \"./tests/ui/specs\"",
-    "api_tests": "npx playwright test \"./tests/api/tests\"",
+    "ui_tests": "npx playwright test \"./tests/ui/specs\" --project=chromium",
+    "api_tests": "npx playwright test  --project=api",
     "ui_smoketests_chromium": "npx playwright test \"./tests/ui/specs\" --grep @smoke --project=chromium",
     "ui_smoketests_firefox": "npx playwright test \"./tests/ui/specs\" --grep @smoke --project=firefox",
-    "api_smoketests":"npx playwright test --grep @smoke --project=api"
+    "api_smoketests": "npx playwright test --grep @smoke --project=api"
   },
   "keywords": [],
   "author": "",

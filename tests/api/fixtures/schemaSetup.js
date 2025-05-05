@@ -1,29 +1,36 @@
-import { test as baseTest } from "@playwright/test"; // Import Playwright's test
-import ownerSchema from "../schemas/ownerSchema"; // Import your Owner schema
-import petSchema from "../schemas/petSchema"; // Import your Pet schema
-import restErrorSchema from "../schemas/restErrorSchema"; // Import your Error schema
+import { test as baseTest } from "@playwright/test";
+import ownerSchema from "../schemas/ownerSchema";
+import petSchema from "../schemas/petSchema";
+import restErrorSchema from "../schemas/restErrorSchema";
 
-// Extend Playwright's test and create schema fixtures
-export const test =
-  baseTest.extend <
-  {
-    ownerSchema,
-    petSchema,
-    errorSchema,
-  } >
-  {
-    // Fixture for Owner Schema
-    ownerSchema: async ({}, use) => {
-      await use(ownerSchema);
-    },
+/*
+  This file sets up reusable "fixtures" for API schema validation in tests.
 
-    // Fixture for Pet Schema
-    petSchema: async ({}, use) => {
-      await use(petSchema);
-    },
+  A fixture is a value or helper you can use inside your tests, like a shared object.
+  Here, we are creating fixtures that provide access to JSON schemas for validating API responses.
 
-    // Fixture for Error Schema
-    errorSchema: async ({}, use) => {
-      await use(restErrorSchema);
-    },
-  };
+  Why this is useful:
+  - It helps ensure that the API returns the expected structure and data types.
+  - It keeps the test files clean by moving schema loading to this setup file.
+  - It avoids repeating the same import code in every test file.
+
+  Once set up, you can access these schemas directly in your tests using:
+    test("example", async ({ ownerSchema }) => { ... })
+*/
+
+export const test = baseTest.extend({
+  // Fixture for Owner Schema: Provides the Owner schema for API response validation.
+  ownerSchema: async ({}, use) => {
+    await use(ownerSchema);
+  },
+
+  // Fixture for Pet Schema: Provides the Pet schema for API response validation.
+  petSchema: async ({}, use) => {
+    await use(petSchema);
+  },
+
+  // Fixture for Error Schema: Provides the error schema for API error response validation.
+  errorSchema: async ({}, use) => {
+    await use(restErrorSchema);
+  },
+});

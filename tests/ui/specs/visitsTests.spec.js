@@ -3,7 +3,7 @@ import { VisitsTestData } from "../data/uiTestData.json";
 import { ownersFixture } from "../fixtures/baseFixtures";
 
 // Test to add a new visit for a pet with valid data
-ownersFixture("Add Pet Visit with valid data @Smoke", async ({ page, ownersSetup }) => {
+ownersFixture("Add Pet Visit with valid data @smoke", async ({ page, ownersSetup }) => {
   const pm = new POManager(page);
   const ownerOverviewPage = pm.getOwnerOverviewPage();
   const ownersPage = pm.getOwnersPage();
